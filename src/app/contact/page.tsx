@@ -49,7 +49,7 @@ export default function Contact() {
               Contact Our Experts
             </h1>
             <p style={{ color: "var(--brand-light)", fontSize: "1.1rem", lineHeight: "1.6", marginBottom: "30px" }}>
-              Have questions about BOOSTER™ specifications, regulatory alignment, or batch options? Speak to our team of researchers and business development specialists.
+              Have questions about BOOSTER specifications, regulatory alignment, or batch options? Speak to our team of researchers and business development specialists.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>

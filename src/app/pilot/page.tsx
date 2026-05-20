@@ -58,7 +58,7 @@ export default function Pilot() {
               Join the Cellivate Pilot Network
             </h1>
             <p style={{ color: "var(--brand-light)", fontSize: "1.1rem", lineHeight: "1.6", marginBottom: "24px" }}>
-              We collaborate with advanced biotechnology teams, cultivated meat producers, and skincare labs to benchmark BOOSTER™ directly against traditional fetal bovine serum.
+              We collaborate with advanced biotechnology teams, cultivated meat producers, and skincare labs to benchmark BOOSTER directly against traditional fetal bovine serum.
             </p>
             <p style={{ color: "var(--brand-light)", fontSize: "1.1rem", lineHeight: "1.6", marginBottom: "30px" }}>
               Selected partners will receive a <strong>free validation sample kit</strong> tailored to their cell lines and growth protocols.

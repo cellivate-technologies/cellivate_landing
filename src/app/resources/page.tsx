@@ -9,6 +9,7 @@ export default function Resources() {
 
   const [formData, setFormData] = useState({
     name: "",
+    designation: "",
     email: "",
     company: ""
   });
@@ -133,6 +134,19 @@ export default function Resources() {
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   style={{ width: "100%", padding: "14px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: "12px", fontSize: "1rem" }}
                   placeholder="Dr. Sarah Jenkins"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="designation" style={{ display: "block", fontWeight: 600, marginBottom: "8px", color: "var(--brand-primary)" }}>Designation / Title</label>
+                <input
+                  type="text"
+                  id="designation"
+                  required
+                  value={formData.designation}
+                  onChange={(e) => setFormData({ ...formData, designation: e.target.value })}
+                  style={{ width: "100%", padding: "14px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: "12px", fontSize: "1rem" }}
+                  placeholder="Research Scientist, Lab Director, etc."
                 />
               </div>
 

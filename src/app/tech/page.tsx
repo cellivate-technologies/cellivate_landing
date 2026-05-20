@@ -1,26 +1,43 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 
 export default function Tech() {
   const [activeStep, setActiveStep] = useState(0);
 
   const steps = [
     {
-      title: "1. Stimulate in Specialized Chamber",
-      desc: "Donor cells are placed in Cellivate’s specialized, directionally-specific electromagnetic stimulation chamber. This unique magnetic modulation triggers target signal secretion.",
-      detail: "Our proprietary technology utilizes pulsed electromagnetic fields (PEMF) to activate TRPC1 calcium channels, kickstarting a mitochondrial survival adaptation known as mitohormesis."
+      title: "Precondition Donor Cells",
+      shortDesc: "Proprietary electromagnetic stimulation to prime EV release",
+      desc: "This proprietary stimulation step is designed to increase release of EV-rich, bioactive conditioned media.",
+      detail: "Our proprietary electromagnetic stimulation activates survival and stress-adaptation pathways, driving controlled mitochondrial responses that reshape how donor cells package bioactive cargo into extracellular vesicles and release them into the culture media.",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+        </svg>
+      )
     },
     {
-      title: "2. Cultivate & Signal Production",
-      desc: "Cells are grown in their preferred environment. Under the magnetic influence, they release signal-rich extracellular vesicles (EVs) at massive yields.",
-      detail: "Instead of raw nutrients, we focus on instructing cells. The cells behave naturally, secreting both 'happy signals' and functional proteins into the media."
+      title: "Generate EV-Enriched Conditioned Media",
+      shortDesc: "Donor cells release bioactive signaling factors into the media",
+      desc: "Donor cells release EV-rich and protein-rich signaling factors into the media, producing a high-yield bioactive output ready for downstream processing.",
+      detail: "Instead of raw nutrients, we focus on instructing cells. The cells behave naturally, secreting both growth-promoting signals and functional proteins into the conditioned media environment.",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path>
+        </svg>
+      )
     },
     {
-      title: "3. Filter & Collect BOOSTER™",
-      desc: "We collect the conditioned media, filter out cellular debris, and quantify EV concentration using nanoparticle tracking analysis (NTA) and chip-based systems.",
-      detail: "We add stabilizer additives to guarantee batch consistency. The final output is a completely animal-free, chemically defined bio-signal cocktail ready for target applications."
+      title: "Clarify, Characterize, and Formulate",
+      shortDesc: "Filter, analyze, and stabilize the final formulation",
+      desc: "Filter the conditioned media and characterize particle-rich output using orthogonal analytics, including NTA.",
+      detail: "We add stabilizer additives to guarantee batch consistency. The final output is a completely animal-free, chemically defined bio-signal cocktail ready for target applications.",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+        </svg>
+      )
     }
   ];
 
@@ -30,7 +47,7 @@ export default function Tech() {
       <section style={{ background: "#0a0a0c", color: "#ffffff", padding: "80px 0", textAlign: "center", position: "relative" }}>
         <div className="section-container" style={{ position: "relative", zIndex: 2 }}>
           <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px" }}>The Platform</span>
-          <h1 style={{ fontSize: "3.2rem", fontWeight: 800, marginTop: "10px" }}>BOOSTER™ Technology</h1>
+          <h1 style={{ fontSize: "3.2rem", fontWeight: 800, marginTop: "10px" }}>BOOSTER Technology</h1>
           <p style={{ fontSize: "1.2rem", color: "#cbd5e1", maxWidth: "700px", margin: "20px auto 0 auto", lineHeight: "1.6" }}>
             A Paradigm Shift in Serum Production: From raw animal extraction to programmable extracellular signaling platforms.
           </p>
@@ -51,54 +68,126 @@ export default function Tech() {
         />
       </section>
 
-      {/* Slide 8: The Streamlined 3-Step Process */}
+      {/* Visual 3-Step Pipeline */}
       <section style={{ padding: "100px 0" }}>
         <div className="section-container">
           <div style={{ textAlign: "center", marginBottom: "60px" }}>
             <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>Process Workflow</span>
             <h2 style={{ fontSize: "2.6rem", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px" }}>
-              Streamlined Three-Step Serum Generation
+              Streamlined 3-Step Booster Production
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "60px", alignItems: "center" }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-              {steps.map((step, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveStep(idx)}
-                  style={{
-                    textAlign: "left",
-                    padding: "24px",
-                    borderRadius: "16px",
-                    border: `2px solid ${activeStep === idx ? "var(--accent-red)" : "rgba(0,0,0,0.06)"}`,
-                    background: activeStep === idx ? "#ffffff" : "transparent",
-                    cursor: "pointer",
-                    transition: "all 0.3s",
-                    boxShadow: activeStep === idx ? "0 10px 30px rgba(0,0,0,0.04)" : "none"
-                  }}
-                >
-                  <h3 style={{ fontSize: "1.2rem", fontWeight: 700, color: activeStep === idx ? "var(--accent-red)" : "var(--brand-primary)", marginBottom: "8px" }}>
-                    {step.title}
-                  </h3>
-                  <p style={{ color: "var(--brand-light)", fontSize: "0.95rem", lineHeight: "1.5" }}>
-                    {step.desc}
-                  </p>
-                </button>
-              ))}
-            </div>
+          {/* Horizontal Pipeline Cards */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px", position: "relative", marginBottom: "40px" }}>
+            {/* Connector Line */}
+            <div style={{
+              position: "absolute",
+              top: "52px",
+              left: "calc(16.66% + 12px)",
+              right: "calc(16.66% + 12px)",
+              height: "3px",
+              background: "linear-gradient(90deg, var(--accent-red), #3b2e9a, var(--accent-red))",
+              zIndex: 0,
+              borderRadius: "2px"
+            }} />
 
-            <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "50px", borderRadius: "24px", boxShadow: "0 20px 40px rgba(0,0,0,0.02)", minHeight: "350px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <span style={{ color: "var(--accent-red)", fontWeight: 700, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "1px" }}>Technical Depth</span>
-              <h3 style={{ fontSize: "1.8rem", fontWeight: 800, color: "var(--brand-primary)", margin: "10px 0 20px 0" }}>
-                {steps[activeStep].title}
-              </h3>
-              <p style={{ color: "var(--brand-light)", fontSize: "1.1rem", lineHeight: "1.6", marginBottom: "20px" }}>
-                {steps[activeStep].desc}
-              </p>
-              <div style={{ background: "var(--bg-secondary)", padding: "20px", borderRadius: "12px", borderLeft: "4px solid var(--accent-red)" }}>
-                <span style={{ fontWeight: 700, color: "var(--brand-primary)", display: "block", marginBottom: "6px", fontSize: "0.9rem" }}>BIOLOGICAL ENGINE:</span>
-                <p style={{ color: "var(--brand-light)", fontSize: "0.95rem", lineHeight: "1.5" }}>
+            {steps.map((step, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveStep(idx)}
+                style={{
+                  textAlign: "center",
+                  padding: "30px 20px",
+                  borderRadius: "20px",
+                  border: `2px solid ${activeStep === idx ? "var(--accent-red)" : "rgba(0,0,0,0.06)"}`,
+                  background: activeStep === idx ? "#ffffff" : "rgba(255,255,255,0.7)",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  boxShadow: activeStep === idx ? "0 12px 32px rgba(217, 35, 52, 0.08)" : "0 4px 16px rgba(0,0,0,0.02)",
+                  position: "relative",
+                  zIndex: 1,
+                  transform: activeStep === idx ? "translateY(-4px)" : "none"
+                }}
+              >
+                {/* Step number badge */}
+                <div style={{
+                  width: "36px",
+                  height: "36px",
+                  borderRadius: "50%",
+                  background: activeStep === idx ? "var(--accent-red)" : "#e2e8f0",
+                  color: activeStep === idx ? "#ffffff" : "var(--brand-primary)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontWeight: 800,
+                  fontSize: "0.9rem",
+                  margin: "0 auto 16px auto",
+                  transition: "all 0.3s"
+                }}>
+                  {idx + 1}
+                </div>
+
+                {/* Icon */}
+                <div style={{
+                  width: "64px",
+                  height: "64px",
+                  borderRadius: "16px",
+                  background: activeStep === idx ? "rgba(217, 35, 52, 0.08)" : "var(--bg-main)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  margin: "0 auto 16px auto",
+                  color: activeStep === idx ? "var(--accent-red)" : "var(--brand-primary)",
+                  transition: "all 0.3s"
+                }}>
+                  {step.icon}
+                </div>
+
+                <h3 style={{
+                  fontSize: "1.1rem",
+                  fontWeight: 700,
+                  color: activeStep === idx ? "var(--accent-red)" : "var(--brand-primary)",
+                  marginBottom: "8px",
+                  transition: "color 0.3s",
+                  lineHeight: "1.3"
+                }}>
+                  {step.title}
+                </h3>
+                <p style={{
+                  color: "var(--brand-light)",
+                  fontSize: "0.85rem",
+                  lineHeight: "1.4",
+                  margin: 0
+                }}>
+                  {step.shortDesc}
+                </p>
+              </button>
+            ))}
+          </div>
+
+          {/* Detail Drawer */}
+          <div style={{
+            background: "#ffffff",
+            border: "1px solid rgba(0,0,0,0.06)",
+            padding: "40px",
+            borderRadius: "24px",
+            boxShadow: "0 20px 40px rgba(0,0,0,0.02)",
+            transition: "all 0.3s"
+          }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", alignItems: "start" }}>
+              <div>
+                <span style={{ color: "var(--accent-red)", fontWeight: 700, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "1px" }}>Step {activeStep + 1} Detail</span>
+                <h3 style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--brand-primary)", margin: "10px 0 16px 0" }}>
+                  {steps[activeStep].title}
+                </h3>
+                <p style={{ color: "var(--brand-light)", fontSize: "1.05rem", lineHeight: "1.6" }}>
+                  {steps[activeStep].desc}
+                </p>
+              </div>
+              <div style={{ background: "var(--bg-secondary)", padding: "24px", borderRadius: "16px", borderLeft: "4px solid var(--accent-red)" }}>
+                <span style={{ fontWeight: 700, color: "var(--brand-primary)", display: "block", marginBottom: "8px", fontSize: "0.9rem" }}>BIOLOGICAL ENGINE:</span>
+                <p style={{ color: "var(--brand-light)", fontSize: "0.95rem", lineHeight: "1.6", margin: 0 }}>
                   {steps[activeStep].detail}
                 </p>
               </div>
@@ -107,7 +196,7 @@ export default function Tech() {
         </div>
       </section>
 
-      {/* Slide 9: Extracellular Vesicles (EVs) */}
+      {/* Extracellular Vesicles (EVs) */}
       <section style={{ background: "#121214", color: "#ffffff", padding: "100px 0" }}>
         <div className="section-container">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: "60px", alignItems: "center" }}>
@@ -117,17 +206,17 @@ export default function Tech() {
                 Extracellular Vesicles (EVs)
               </h2>
               <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: "1.6", marginBottom: "30px" }}>
-                Cells communicate and regulate biological responses via extracellular vesicles (EVs). These tiny nano-particles carry essential proteins, RNA, and regulatory messages.
+                Cells communicate and regulate biological responses via extracellular vesicles (EVs). Membrane-bound particles released by cells carry proteins, RNA, lipids, and other signaling cargo.
               </p>
               
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
                 <div style={{ background: "rgba(255,255,255,0.04)", padding: "20px", borderRadius: "12px" }}>
-                  <h4 style={{ color: "var(--accent-red)", fontSize: "1.5rem", fontWeight: 800 }}>6000x</h4>
-                  <p style={{ color: "#94a3b8", fontSize: "0.9rem", marginTop: "4px" }}>Smaller than a human hair (30nm – 10μm)</p>
+                  <h4 style={{ color: "var(--accent-red)", fontSize: "1.5rem", fontWeight: 800 }}>Nano-to-Micron</h4>
+                  <p style={{ color: "#94a3b8", fontSize: "0.9rem", marginTop: "4px" }}>EVs span a broad nano-to-micron size range</p>
                 </div>
                 <div style={{ background: "rgba(255,255,255,0.04)", padding: "20px", borderRadius: "12px" }}>
                   <h4 style={{ color: "var(--accent-red)", fontSize: "1.5rem", fontWeight: 800 }}>2013</h4>
-                  <p style={{ color: "#94a3b8", fontSize: "0.9rem", marginTop: "4px" }}>Nobel Prize in Physiology or Medicine for EV discovery</p>
+                  <p style={{ color: "#94a3b8", fontSize: "0.9rem", marginTop: "4px" }}>Nobel Prize for discoveries of the machinery regulating vesicle traffic</p>
                 </div>
               </div>
             </div>
@@ -157,14 +246,14 @@ export default function Tech() {
         </div>
       </section>
 
-      {/* Slide 10: Academic Scrutiny & MoA */}
+      {/* Scientific Rationale & Mechanistic Basis */}
       <section style={{ padding: "100px 0" }}>
         <div className="section-container">
           <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "60px", alignItems: "center" }}>
             <div>
               <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>Mechanism of Action</span>
               <h2 style={{ fontSize: "2.6rem", fontWeight: 800, color: "var(--brand-primary)", margin: "10px 0 20px 0" }}>
-                Rigorous Academic Scrutiny & Mechanism
+                Scientific Rationale & Mechanistic Basis
               </h2>
               <p style={{ color: "var(--brand-light)", lineHeight: "1.6", marginBottom: "20px" }}>
                 Our PEMF (Pulsed Electromagnetic Field) technology induces <strong>mitohormesis</strong> (mitochondrial survival adaptations). This promotes mitochondriogenesis and reduces apoptosis.
@@ -207,7 +296,7 @@ export default function Tech() {
         </div>
       </section>
 
-      {/* Slide 36: Competitive Landscape Table */}
+      {/* Competitive Landscape Table */}
       <section style={{ padding: "100px 0", background: "#fdfdfb" }}>
         <div className="section-container">
           <div style={{ textAlign: "center", marginBottom: "60px" }}>
@@ -226,7 +315,7 @@ export default function Tech() {
                   <th style={{ padding: "20px", fontWeight: 600 }}>Recombinant Proteins</th>
                   <th style={{ padding: "20px", fontWeight: 600 }}>Hydrolysates</th>
                   <th style={{ padding: "20px", fontWeight: 600 }}>HPL (Platelet Lysate)</th>
-                  <th style={{ padding: "20px", fontWeight: 600, background: "var(--accent-red)" }}>Cellivate BOOSTER™</th>
+                  <th style={{ padding: "20px", fontWeight: 600, background: "var(--accent-red)" }}>Cellivate BOOSTER</th>
                 </tr>
               </thead>
               <tbody>

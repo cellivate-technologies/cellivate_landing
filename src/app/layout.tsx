@@ -19,7 +19,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Cellivate Technologies | Fetal Bovine Serum Alternatives",
-  description: "Revolutionising cell-based solutions for a sustainable future with BOOSTER™ platform technology and EV-based biological inputs.",
+  description: "Revolutionising cell-based solutions for a sustainable future with BOOSTER platform technology and EV-based biological inputs.",
 };
 
 export default function RootLayout({
@@ -69,10 +69,6 @@ export default function RootLayout({
             </nav>
 
             <div className="nav-actions">
-              <Link href="/pilot" className="nav-cta-btn" id="get-started-btn" style={{ background: "linear-gradient(135deg, #3b2e9a 0%, #D92334 100%)", color: "#ffffff", padding: "10px 24px", borderRadius: "10px", fontWeight: 600, display: "inline-flex", alignItems: "center", gap: "8px", textDecoration: "none", transition: "transform 0.2s", fontSize: "0.95rem" }}>
-                <span>Get Started</span>
-                <span style={{ fontSize: "1.1rem", lineHeight: "1" }}>→</span>
-              </Link>
             </div>
           </div>
         </header>
@@ -123,24 +119,24 @@ export default function RootLayout({
                   Revolutionising Cell-Based Solutions for a Sustainable Future. Providing high-performance, animal-free biological inputs.
                 </p>
                 <div style={{ display: "flex", gap: "16px", color: "var(--brand-dark)" }}>
-                  <a href="#" aria-label="LinkedIn" style={{ color: "inherit", transition: "color 0.2s" }}>
+                  <a href="https://www.linkedin.com/company/cellivate-technologies/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style={{ color: "inherit", transition: "color 0.2s" }}>
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                     </svg>
                   </a>
-                  <a href="#" aria-label="Facebook" style={{ color: "inherit", transition: "color 0.2s" }}>
+                  <a href="https://www.facebook.com/CellivateTechnologies" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: "inherit", transition: "color 0.2s" }}>
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
                     </svg>
                   </a>
-                  <a href="#" aria-label="Twitter" style={{ color: "inherit", transition: "color 0.2s" }}>
+                  <a href="https://twitter.com/CellivateTech" target="_blank" rel="noopener noreferrer" aria-label="Twitter" style={{ color: "inherit", transition: "color 0.2s" }}>
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
                     </svg>
                   </a>
-                  <a href="#" aria-label="Skype" style={{ color: "inherit", transition: "color 0.2s" }}>
+                  <a href="https://www.youtube.com/channel/UChqGWOgXIiBl_H6RWpBqCfQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style={{ color: "inherit", transition: "color 0.2s" }}>
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M22.063 11.233c.094.49.141.986.141 1.48 0 4.997-4.06 9.059-9.058 9.059a9.01 9.01 0 01-1.482-.142 6.554 6.554 0 01-5.116.273 6.549 6.549 0 01-.274-5.118A9.01 9.01 0 016.132 15.3c0-4.998 4.062-9.058 9.06-9.058.492 0 .988.047 1.478.14A6.556 6.556 0 0121.79 6.66a6.545 6.545 0 01.273 5.116v-.543zm-11.666 4.41c0 1.258.983 2.176 2.502 2.176.84 0 1.583-.24 2.1-.643.518-.403.77-.905.753-1.428-.02-.544-.393-.97-1.127-1.127l-2.022-.44c-.752-.162-1.026-.51-1.026-.957 0-.528.463-.923 1.246-.923.753 0 1.344.256 1.76.69.416.432.61.96.61 1.458 0 .288.24.512.528.512h.736c.288 0 .528-.224.528-.512 0-.912-.496-1.744-1.344-2.224-.848-.48-1.92-.688-2.816-.688-1.296 0-2.32.32-2.912.928-.592.608-.88 1.392-.88 2.224 0 .848.448 1.488 1.248 1.792l1.984.448c.704.16 1.056.464 1.056.912 0 .544-.544.976-1.376.976-.896 0-1.552-.368-1.92-.96-.368-.592-.544-1.136-.544-1.632 0-.288-.24-.512-.528-.512h-.832a.523.523 0 00-.528.512z"/>
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                     </svg>
                   </a>
                 </div>

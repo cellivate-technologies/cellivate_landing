@@ -24,7 +24,7 @@ export default function Home() {
             </h1>
 
             <p className="hero-subtitle">
-              Booster™ is Cellivate's EV-based alternative to FBS, designed to improve cell growth, consistency, and sustainability across advanced cell culture applications.
+              Booster is Cellivate's EV-based alternative to FBS, designed to improve cell growth, consistency, and sustainability across advanced cell culture applications.
             </p>
 
             <div className="hero-actions">
@@ -38,7 +38,7 @@ export default function Home() {
                 </div>
               </Link>
               <Link href="/tech" className="btn-outlined" style={{ borderColor: "#d9dbf1", color: "var(--brand-dark)" }}>
-                <span>Explore Booster™</span>
+                <span>Explore Booster</span>
                 <svg className="arrow-inline" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
@@ -107,22 +107,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Floating Card 3 */}
-            <div className="float-card card-results" id="card-results">
-              <div className="card-icon-circle color-blue" style={{ background: "rgba(217, 35, 52, 0.1)", color: "var(--accent-red)" }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-              </div>
-              <div className="card-content">
-                <div className="card-title-prefix">Results in</div>
-                <div className="card-stat" style={{ color: "var(--accent-red)" }}>7–10</div>
-                <div className="card-desc">business days</div>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
@@ -213,7 +198,7 @@ export default function Home() {
             <div className="solution-content">
               <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>Tomorrow's Standard</span>
               <h2 style={{ fontSize: "3rem", fontWeight: 800, color: "#ffffff", margin: "10px 0 24px 0" }}>
-                Meet BOOSTER™
+                Meet BOOSTER
               </h2>
               <p style={{ fontSize: "1.2rem", color: "#cbd5e1", lineHeight: "1.6", marginBottom: "20px" }}>
                 Our cell-derived, animal-free serum replacer bridges the gap between ethical compliance and high-performance cellular yields. 
@@ -264,59 +249,25 @@ export default function Home() {
             {/* Product 1: Booster */}
             <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", borderRadius: "24px", padding: "40px", boxShadow: "0 15px 40px rgba(0,0,0,0.02)", display: "flex", flexDirection: "column" }}>
               <span style={{ color: "var(--accent-red)", fontWeight: 700, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "1px" }}>High Performance</span>
-              <h3 style={{ fontSize: "1.8rem", fontWeight: 800, color: "var(--brand-primary)", margin: "10px 0 16px 0" }}>BOOSTER™ Premium</h3>
+              <h3 style={{ fontSize: "1.8rem", fontWeight: 800, color: "var(--brand-primary)", margin: "10px 0 16px 0" }}>BOOSTER Premium</h3>
               <p style={{ color: "var(--brand-light)", lineHeight: "1.6", marginBottom: "30px", flex: 1 }}>
                 Our flagship serum replacer fully enriched with specialized extracellular vesicles (EVs). Recommended for primary stem cells, gene therapy vectors, and complex biomanufacturing scales.
               </p>
-              <div style={{ borderTop: "1px solid rgba(0,0,0,0.08)", paddingTop: "24px" }}>
-                <Link href="/pilot" className="btn-primary" style={{ width: "100%", justifyContent: "center", padding: "12px 24px", background: "#121214", color: "#ffffff", borderRadius: "30px", fontWeight: 600, textDecoration: "none", display: "flex", textAlign: "center", transition: "all 0.3s" }}>
-                  Request Sample
-                </Link>
-              </div>
             </div>
 
             {/* Product 2: Booster Basic */}
             <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", borderRadius: "24px", padding: "40px", boxShadow: "0 15px 40px rgba(0,0,0,0.02)", display: "flex", flexDirection: "column" }}>
               <span style={{ color: "var(--accent-red)", fontWeight: 700, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "1px" }}>Standard Cultivation</span>
-              <h3 style={{ fontSize: "1.8rem", fontWeight: 800, color: "var(--brand-primary)", margin: "10px 0 16px 0" }}>BOOSTER™ Basic</h3>
+              <h3 style={{ fontSize: "1.8rem", fontWeight: 800, color: "var(--brand-primary)", margin: "10px 0 16px 0" }}>BOOSTER Basic</h3>
               <p style={{ color: "var(--brand-light)", lineHeight: "1.6", marginBottom: "30px", flex: 1 }}>
                 A refined subset of our signature formulation. Designed for standard cell line maintenance, research-grade passages, and cost-effective daily culture tasks.
               </p>
-              <div style={{ borderTop: "1px solid rgba(0,0,0,0.08)", paddingTop: "24px" }}>
-                <Link href="/pilot" className="btn-primary" style={{ width: "100%", justifyContent: "center", padding: "12px 24px", background: "transparent", border: "2px solid #121214", color: "#121214", borderRadius: "30px", fontWeight: 600, textDecoration: "none", display: "flex", textAlign: "center", transition: "all 0.3s" }}>
-                  Request Sample
-                </Link>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Lab Banner Callout */}
-      <section style={{ height: "450px", position: "relative", display: "flex", alignItems: "center", overflow: "hidden" }}>
-        <div 
-          style={{ 
-            position: "absolute", 
-            top: 0, 
-            left: 0, 
-            width: "100%", 
-            height: "100%", 
-            backgroundImage: "url('/biotech_lab.png')", 
-            backgroundSize: "cover", 
-            backgroundPosition: "center",
-            filter: "brightness(0.4)"
-          }} 
-        />
-        <div className="section-container" style={{ position: "relative", zIndex: 2, color: "#ffffff", textAlign: "center", width: "100%" }}>
-          <h2 style={{ fontSize: "2.8rem", fontWeight: 800, marginBottom: "20px" }}>Ready to Transition Beyond Serum?</h2>
-          <p style={{ fontSize: "1.25rem", maxWidth: "650px", margin: "0 auto 30px auto", color: "#e2e8f0" }}>
-            Join our structured pilot program to benchmark BOOSTER™ against Fetal Bovine Serum in your own assays.
-          </p>
-          <Link href="/pilot" className="btn-primary" style={{ padding: "14px 32px", background: "var(--accent-red)", color: "#ffffff", borderRadius: "30px", fontWeight: 600, textDecoration: "none", display: "inline-flex" }}>
-            Request Your Sample Kit
-          </Link>
-        </div>
-      </section>
+
     </main>
   );
 }
