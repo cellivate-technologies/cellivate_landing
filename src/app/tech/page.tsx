@@ -57,28 +57,27 @@ export default function Tech() {
   return (
     <main style={{ minHeight: "100vh", background: "var(--bg-main)" }}>
       {/* Intro Hero banner */}
-      <section style={{ background: "#0a0a0c", color: "#ffffff", padding: "80px 0", textAlign: "center", position: "relative" }}>
+      <section className="tech-hero">
+        <div className="tech-hero-bg" />
         <div className="section-container" style={{ position: "relative", zIndex: 2 }}>
-          <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px" }}>The Platform</span>
-          <h1 style={{ fontSize: "clamp(1.8rem, 6vw, 3.2rem)", fontWeight: 800, marginTop: "10px" }}>The technology that powers our Booster production</h1>
-          <p style={{ fontSize: "1.2rem", color: "#cbd5e1", maxWidth: "700px", margin: "20px auto 0 auto", lineHeight: "1.6" }}>
+          <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.85rem" }}>The Platform</span>
+          <h1 style={{ fontSize: "clamp(1.9rem, 5vw, 3.2rem)", fontWeight: 800, marginTop: "10px" }}>The technology that powers our Booster production</h1>
+          <p style={{ fontSize: "1.15rem", color: "#cbd5e1", maxWidth: "700px", margin: "16px auto 0 auto", lineHeight: "1.6" }}>
             From raw animal extraction to programmable extracellular signaling platforms.
           </p>
         </div>
-        <div 
-          style={{ 
-            position: "absolute", 
-            top: 0, 
-            left: 0, 
-            width: "100%", 
-            height: "100%", 
-            backgroundImage: "url('/cells_microscope.png')", 
-            backgroundSize: "cover", 
-            backgroundPosition: "center",
-            opacity: 0.1,
-            pointerEvents: "none"
-          }} 
-        />
+
+        {/* Scroll Indicator */}
+        <div style={{ position: "absolute", bottom: "30px", left: "50%", transform: "translateX(-50%)", zIndex: 3, display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", pointerEvents: "none" }}>
+          <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "2px", color: "rgba(255,255,255,0.4)", fontWeight: 600 }}>
+            Scroll to know more
+          </span>
+          <div style={{ width: "24px", height: "24px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ animation: "bounceArrow 2s infinite" }}>
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
       </section>
 
       {/* Visual 3-Step Pipeline */}

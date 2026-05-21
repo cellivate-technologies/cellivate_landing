@@ -1,6 +1,30 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect, useRef } from "react";
 
 export default function About() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
   const team = [
     {
       name: "Dr. Srinivas Ramasamy",
@@ -97,44 +121,61 @@ export default function About() {
             Revolutionising Cell-Based Solutions for a Sustainable Future.
           </p>
         </div>
+
+        {/* Scroll Indicator */}
+        <div style={{ position: "absolute", bottom: "30px", left: "50%", transform: "translateX(-50%)", zIndex: 3, display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", pointerEvents: "none" }}>
+          <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "2px", color: "rgba(255,255,255,0.4)", fontWeight: 600 }}>
+            Scroll to know more
+          </span>
+          <div style={{ width: "24px", height: "24px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ animation: "bounceArrow 2s infinite" }}>
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
       </section>
 
       {/* ── Vision & Mission ── */}
-      <section className="vision-mission-section">
-        <div className="vision-mission-grid">
+      <section ref={sectionRef} className="vision-mission-section" style={{ padding: "80px 0", background: "var(--bg-main)" }}>
+        <div className="section-container">
+          <div className="vision-mission-grid">
 
-          <div className="vm-card vm-card-vision">
-            <div className="vm-content">
-              <div className="vm-logo-row">
-                {logoSvg}
-                <span className="vm-logo-text">
-                  Cellivate
-                  <span className="vm-logo-sub">Technologies</span>
-                </span>
+            <div className={`vm-card vm-card-vision ${isVisible ? "animate-popup" : "vm-card-hidden"}`}>
+              <div className="vm-content">
+                <div className="vm-logo-row">
+                  {logoSvg}
+                  <span className="vm-logo-text">
+                    Cellivate
+                    <span className="vm-logo-sub">Technologies</span>
+                  </span>
+                </div>
+                <p className="vm-label">Vision:</p>
+                <p className="vm-statement">
+                  To lead the global transition to sustainable practices with cell-based technologies, eliminating the need for animal use and creating a healthier future for humanity and the planet
+                </p>
               </div>
-              <p className="vm-label">Vision:</p>
-              <p className="vm-statement">
-                To lead the global transition to sustainable practices with cell-based technologies, eliminating the need for animal use and creating a healthier future for humanity and the planet
-              </p>
             </div>
-          </div>
 
-          <div className="vm-card vm-card-mission">
-            <div className="vm-content">
-              <div className="vm-logo-row">
-                {logoSvg}
-                <span className="vm-logo-text">
-                  Cellivate
-                  <span className="vm-logo-sub">Technologies</span>
-                </span>
+            <div 
+              className={`vm-card vm-card-mission ${isVisible ? "animate-popup" : "vm-card-hidden"}`}
+              style={{ animationDelay: "0.15s" }}
+            >
+              <div className="vm-content">
+                <div className="vm-logo-row">
+                  {logoSvg}
+                  <span className="vm-logo-text">
+                    Cellivate
+                    <span className="vm-logo-sub">Technologies</span>
+                  </span>
+                </div>
+                <p className="vm-label">Mission:</p>
+                <p className="vm-statement">
+                  Implementing deep-tech products and technologies that enable the use of cells to replace animal derived products
+                </p>
               </div>
-              <p className="vm-label">Mission:</p>
-              <p className="vm-statement">
-                Implementing deep-tech products and technologies that enable the use of cells to replace animal derived products
-              </p>
             </div>
-          </div>
 
+          </div>
         </div>
       </section>
 
