@@ -1,9 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 export default function Tech() {
   const [activeStep, setActiveStep] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      const newMuted = !videoRef.current.muted;
+      videoRef.current.muted = newMuted;
+      setIsMuted(newMuted);
+    }
+  };
 
   const steps = [
     {
@@ -255,16 +265,53 @@ export default function Tech() {
 
             <div style={{ position: "relative", borderRadius: "24px", overflow: "hidden", border: "1px solid rgba(255, 255, 255, 0.08)", boxShadow: "0 20px 40px rgba(0,0,0,0.5)", aspectRatio: "16/9", display: "flex", justifyContent: "center" }}>
               <video 
+                ref={videoRef}
                 autoPlay 
                 loop 
-                muted 
+                muted={isMuted}
                 playsInline 
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               >
-                <source src="/boomerang_loop.mp4" type="video/mp4" />
+                <source src="/WhatsApp%20Video%202026-05-21%20at%202.08.25%20PM.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(to top, rgba(18, 18, 20, 0.4), transparent)", pointerEvents: "none" }} />
+              
+              <button 
+                onClick={toggleMute}
+                aria-label={isMuted ? "Unmute video" : "Mute video"}
+                style={{ 
+                  position: "absolute", 
+                  bottom: "20px", 
+                  right: "20px", 
+                  background: "rgba(0, 0, 0, 0.6)", 
+                  border: "1px solid rgba(255, 255, 255, 0.2)", 
+                  color: "#ffffff", 
+                  width: "40px", 
+                  height: "40px", 
+                  borderRadius: "50%", 
+                  display: "flex", 
+                  alignItems: "center", 
+                  justifyContent: "center", 
+                  cursor: "pointer", 
+                  zIndex: 5,
+                  backdropFilter: "blur(4px)",
+                  transition: "all 0.2s ease"
+                }}
+              >
+                {isMuted ? (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                  </svg>
+                ) : (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                  </svg>
+                )}
+              </button>
             </div>
           </div>
         </div>

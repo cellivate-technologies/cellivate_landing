@@ -68,7 +68,6 @@ export default function Pilot() {
               <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--brand-primary)", marginBottom: "12px" }}>Why Participate?</h3>
               <ul style={{ listStyleType: "none", padding: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
                 <li>✓ Benchmark cell-based performance side-by-side with FBS.</li>
-                <li>✓ Gain priority access to GMP-grade scale lots.</li>
                 <li>✓ Reduce long-term serum procurement costs by up to 40%.</li>
                 <li>✓ Shift to a 100% animal-free, ethical supply pipeline.</li>
               </ul>
