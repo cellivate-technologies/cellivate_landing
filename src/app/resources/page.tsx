@@ -68,29 +68,47 @@ export default function Resources() {
     }
   };
 
-  // Define URLs for the 8 pages of book.pdf
-  const bookPages = [
-    "/book_pages/page_1.png",
-    "/book_pages/page_2.png",
-    "/book_pages/page_3.png",
-    "/book_pages/page_4.png",
-    "/book_pages/page_5.png",
-    "/book_pages/page_6.png",
-    "/book_pages/page_7.png",
-    "/book_pages/page_8.png",
+  const books = [
+    {
+      id: "fbs-problem",
+      title: "Strategic Brief: The FBS Problem",
+      url: "/The FBS Problem_Strategic Brief_Cellivate_May2026 (1).pdf",
+      desc: "Strategic analysis of ethical, regulatory, and cost bottlenecks of Fetal Bovine Serum usage in cell culture workflows."
+    },
+    {
+      id: "regen-med",
+      title: "Cell Culture Media for Regenerative Medicine",
+      url: "/Cell culture media for regenerative medicine (1).pdf",
+      desc: "Review of key considerations in selecting cell culture media for cell-based therapies and regenerative medicine applications."
+    },
+    {
+      id: "msc-secretome",
+      title: "MSC Secretome for Skin",
+      url: "/MSC Secretome Skin (1).pdf",
+      desc: "Investigating the regenerative and anti-aging properties of Mesenchymal Stem Cell secretome formulations on human skin tissue."
+    },
+    {
+      id: "pemf-exposure",
+      title: "PEMF Exposure & Muscle Secretome",
+      url: "/Brief exposure to directionally-specific pemf mobilizes the muscle secretome and is antagonized by streptomycin a potential regenerative (1).pdf",
+      desc: "Study of electromagnetically stimulated cell systems and downstream secretome profiling under streptomycinal antagonism."
+    }
   ];
+
+  const [selectedBookIndex, setSelectedBookIndex] = useState(0);
+  const currentBook = books[selectedBookIndex];
 
   return (
     <main style={{ minHeight: "100vh", background: "var(--bg-main)", padding: "80px 0" }}>
       <div className="section-container" style={{ textAlign: "center", marginBottom: "40px" }}>
         <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>
-          Ebook & Decks
+          Ebooks & Technical Literature
         </span>
         <h1 style={{ fontSize: "clamp(1.9rem, 5vw, 3.2rem)", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px" }}>
-          Cellivate Technical Deck
+          Technical Resources & Strategic Briefs
         </h1>
         <p style={{ color: "var(--brand-light)", fontSize: "1.1rem", maxWidth: "600px", margin: "16px auto 0 auto", lineHeight: "1.6" }}>
-          Explore our complete corporate technical literature detailing mechanism of action studies and comparative product matrices.
+          Access our complete technical publications detailing mechanism of action studies, strategic briefs, and secretome formulations.
         </p>
       </div>
 
@@ -113,7 +131,7 @@ export default function Resources() {
                 Unlock Technical Literature
               </h2>
               <p style={{ color: "var(--brand-light)", fontSize: "0.95rem", lineHeight: "1.5" }}>
-                Enter your details to instantly view our 8-page technical publication in our interactive viewer and download the PDF.
+                Enter your details to instantly unlock our full suite of technical publications, corporate reports, and strategic briefs.
               </p>
             </div>
 
@@ -202,7 +220,7 @@ export default function Resources() {
                     Unlocking Literature...
                   </>
                 ) : (
-                  "Access Literature"
+                  "Access Technical Literature"
                 )}
               </button>
             </form>
@@ -213,73 +231,150 @@ export default function Resources() {
           </div>
         </div>
       ) : (
-        /* 3D Book Flipper Widget */
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", overflow: "hidden" }}>
-          <div className="book-container">
-            <div className="book-shadow"></div>
-            <div className="spine"></div>
-            <div className="book">
-              {/* Left Page (current Left Page) */}
-              <div className="book-page left-page">
-                <div className="page-content" style={{ padding: 0, background: "#ffffff", overflow: "hidden" }}>
-                  <div style={{ width: "100%", height: "100%", position: "relative", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                    <img
-                      src={bookPages[currentPage * 2]}
-                      alt={`Page ${currentPage * 2 + 1}`}
-                      style={{ width: "100%", height: "100%", objectFit: "contain", background: "#ffffff" }}
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Page (current Right Page) */}
-              <div className="book-page right-page">
-                <div className="page-content" style={{ padding: 0, background: "#ffffff", overflow: "hidden" }}>
-                  <div style={{ width: "100%", height: "100%", position: "relative", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                    <img
-                      src={bookPages[currentPage * 2 + 1]}
-                      alt={`Page ${currentPage * 2 + 2}`}
-                      style={{ width: "100%", height: "100%", objectFit: "contain", background: "#ffffff" }}
-                    />
-                  </div>
+        /* Dropdown & PDF Iframe Previewer Container */
+        <div className="section-container" style={{ maxWidth: "900px", margin: "0 auto", padding: "0 20px" }}>
+          {/* Dropdown Card */}
+          <div
+            style={{
+              background: "#ffffff",
+              border: "1px solid rgba(0,0,0,0.06)",
+              borderRadius: "24px",
+              padding: "30px",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.01)",
+              marginBottom: "30px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "20px"
+            }}
+          >
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              <label htmlFor="book-select" style={{ fontWeight: 700, color: "var(--brand-primary)", fontSize: "1rem" }}>
+                Select Literature to View:
+              </label>
+              <div style={{ position: "relative", width: "100%" }}>
+                <select
+                  id="book-select"
+                  value={selectedBookIndex}
+                  onChange={(e) => setSelectedBookIndex(Number(e.target.value))}
+                  style={{
+                    width: "100%",
+                    padding: "16px 20px",
+                    fontSize: "1.1rem",
+                    fontWeight: 600,
+                    color: "var(--brand-primary)",
+                    background: "#fcfcfa",
+                    border: "2px solid rgba(0,0,0,0.06)",
+                    borderRadius: "16px",
+                    cursor: "pointer",
+                    appearance: "none",
+                    WebkitAppearance: "none",
+                    outline: "none",
+                    transition: "all 0.25s ease"
+                  }}
+                >
+                  {books.map((b, idx) => (
+                    <option key={b.id} value={idx}>
+                      📖 {b.title}
+                    </option>
+                  ))}
+                </select>
+                <div
+                  style={{
+                    position: "absolute",
+                    right: "20px",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    pointerEvents: "none",
+                    color: "var(--brand-light)",
+                    fontSize: "0.8rem",
+                    fontWeight: "bold"
+                  }}
+                >
+                  ▼
                 </div>
               </div>
             </div>
+
+            {/* Selected Book Details */}
+            <div style={{ borderTop: "1px solid rgba(0,0,0,0.05)", paddingTop: "20px" }}>
+              <h3 style={{ fontSize: "1.45rem", fontWeight: 800, color: "var(--brand-primary)", marginBottom: "8px" }}>
+                {currentBook.title}
+              </h3>
+              <p style={{ color: "var(--brand-light)", fontSize: "1rem", lineHeight: "1.6", margin: 0 }}>
+                {currentBook.desc}
+              </p>
+            </div>
+
+            {/* Action Buttons Row */}
+            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", borderTop: "1px solid rgba(0,0,0,0.05)", paddingTop: "20px" }}>
+              <a
+                href={currentBook.url}
+                download
+                style={{
+                  background: "var(--accent-red)",
+                  color: "#ffffff",
+                  padding: "14px 28px",
+                  borderRadius: "30px",
+                  fontSize: "0.95rem",
+                  fontWeight: 700,
+                  textDecoration: "none",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  boxShadow: "0 6px 15px rgba(217, 35, 52, 0.15)",
+                  transition: "all 0.3s ease"
+                }}
+              >
+                <span>📥</span>
+                <span>Download PDF</span>
+              </a>
+
+              <a
+                href={currentBook.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background: "rgba(59, 46, 154, 0.08)",
+                  color: "#3b2e9a",
+                  padding: "14px 28px",
+                  borderRadius: "30px",
+                  fontSize: "0.95rem",
+                  fontWeight: 700,
+                  textDecoration: "none",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  transition: "all 0.3s ease"
+                }}
+              >
+                <span>🔗</span>
+                <span>Open in New Tab</span>
+              </a>
+            </div>
           </div>
 
-          {/* Navigation buttons */}
-          <div className="resources-nav-row" style={{ display: "flex", gap: "20px", marginTop: "40px", alignItems: "center", zIndex: 10, flexWrap: "wrap", justifyContent: "center" }}>
-            <button
-              onClick={handlePrev}
-              disabled={currentPage === 0}
-              className="btn-prev-spread"
-            >
-              ← Previous Spread
-            </button>
-
-            <span style={{ fontWeight: 600, color: "var(--brand-primary)", fontSize: "0.95rem" }}>
-              Spread {currentPage + 1} of {totalSpreads} (Pages {currentPage * 2 + 1}-{currentPage * 2 + 2})
-            </span>
-
-            <button
-              onClick={handleNext}
-              disabled={currentPage === totalSpreads - 1}
-              className="btn-next-spread"
-            >
-              Next Spread →
-            </button>
-          </div>
-
-          {/* Download Button */}
-          <div style={{ marginTop: "50px", textAlign: "center", zIndex: 10 }}>
-            <a
-              href="/book.pdf"
-              download
-              className="btn-download-deck"
-            >
-              <span>📥</span>
-              <span>Download Technical Deck (PDF)</span>
-            </a>
+          {/* Iframe Preview Container */}
+          <div
+            style={{
+              background: "#ffffff",
+              border: "1px solid rgba(0,0,0,0.06)",
+              borderRadius: "24px",
+              padding: "16px",
+              boxShadow: "0 20px 40px rgba(0,0,0,0.03)",
+              overflow: "hidden"
+            }}
+          >
+            <iframe
+              src={`${currentBook.url}#toolbar=0`}
+              title={currentBook.title}
+              style={{
+                width: "100%",
+                height: "650px",
+                border: "none",
+                borderRadius: "12px",
+                background: "#f8f8f8"
+              }}
+            />
           </div>
         </div>
       )}

@@ -215,7 +215,7 @@ export default function Home() {
             <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "24px", boxShadow: "0 20px 40px rgba(0,0,0,0.02)", display: "flex", flexDirection: "column", gap: "16px" }}>
               <div style={{ borderRadius: "16px", overflow: "hidden", border: "1px solid rgba(0,0,0,0.05)" }}>
                 <img 
-                  src="/extracted_images/image11.jpeg" 
+                  src="/WhatsApp Image 2026-05-22 at 12.40.57 PM.jpeg" 
                   alt="FBS Sourcing Reality" 
                   style={{ width: "100%", display: "block", objectFit: "cover" }} 
                 />
@@ -302,7 +302,7 @@ export default function Home() {
             <div className="solution-media" style={{ display: "flex", justifyContent: "center" }}>
               <div style={{ position: "relative", width: "100%", maxWidth: "420px", borderRadius: "24px", overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.5)", border: "1px solid rgba(255,255,255,0.08)" }}>
                 <img 
-                  src="/extracted_images/booster_visual.png"
+                  src="/hf_20260523_061624_901e0d94-0352-4796-b721-b3c590f3f4db.png"
                   alt="BOOSTER Vial visual"
                   style={{ width: "100%", display: "block" }} 
                 />

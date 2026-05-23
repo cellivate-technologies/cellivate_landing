@@ -271,7 +271,7 @@ export default function Tech() {
                 playsInline 
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               >
-                <source src="/WhatsApp%20Video%202026-05-21%20at%202.08.25%20PM.mp4" type="video/mp4" />
+                <source src="/EVs%20Communicate-Cellivate%20Technologies.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(to top, rgba(18, 18, 20, 0.4), transparent)", pointerEvents: "none" }} />
@@ -341,24 +341,20 @@ export default function Tech() {
             </div>
 
             <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "40px", borderRadius: "24px", boxShadow: "0 20px 40px rgba(0,0,0,0.02)" }}>
-              <h3 style={{ fontSize: "1.3rem", fontWeight: 700, color: "var(--brand-primary)", marginBottom: "20px" }}>Validated Growth Lineages</h3>
+              <h3 style={{ fontSize: "1.3rem", fontWeight: 700, color: "var(--brand-primary)", marginBottom: "20px" }}>Tested Across Diverse Cell Types</h3>
               
               <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <span style={{ fontWeight: 600 }}>Myogenesis (Muscle)</span>
-                  <span style={{ color: "var(--accent-red)", fontWeight: 700 }}>2x EV Output</span>
+                <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px", display: "flex", flexDirection: "column", gap: "4px" }}>
+                  <span style={{ fontWeight: 700, color: "var(--brand-primary)" }}>HEK Cells</span>
+                  <span style={{ color: "var(--brand-light)", fontSize: "0.9rem", lineHeight: "1.4" }}>Consistent growth and high viability in suspension culture.</span>
                 </div>
-                <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <span style={{ fontWeight: 600 }}>Stem Cells (hMSC)</span>
-                  <span style={{ color: "var(--accent-red)", fontWeight: 700 }}>Comparable to FBS</span>
+                <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px", display: "flex", flexDirection: "column", gap: "4px" }}>
+                  <span style={{ fontWeight: 700, color: "var(--brand-primary)" }}>Mesenchymal Stem Cells (MSCs)</span>
+                  <span style={{ color: "var(--brand-light)", fontSize: "0.9rem", lineHeight: "1.4" }}>Enhanced proliferation and maintenance of stemness.</span>
                 </div>
-                <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <span style={{ fontWeight: 600 }}>Fibroblasts (HFB)</span>
-                  <span style={{ color: "var(--accent-red)", fontWeight: 700 }}>Enhanced Proliferation</span>
-                </div>
-                <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <span style={{ fontWeight: 600 }}>Cancer Assays (HCT)</span>
-                  <span style={{ color: "var(--accent-red)", fontWeight: 700 }}>14x EV Output</span>
+                <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px", display: "flex", flexDirection: "column", gap: "4px" }}>
+                  <span style={{ fontWeight: 700, color: "var(--brand-primary)" }}>C2C12 Cells</span>
+                  <span style={{ color: "var(--brand-light)", fontSize: "0.9rem", lineHeight: "1.4" }}>Improved myoblast proliferation and differentiation.</span>
                 </div>
               </div>
             </div>

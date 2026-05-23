@@ -27,32 +27,39 @@ export default function About() {
   }, []);
   const team = [
     {
+      name: "Dr. Viknish Krishnan-Kutty",
+      role: "Founder & CEO",
+      image: "/team/viknish.png",
+      bio: "Founder and CEO leading the commercialisation of animal-free cell culture platforms and scaling global partnerships across the biotechnology and cellular agriculture sectors.",
+      linkedin: "https://www.linkedin.com/in/viknishkkutty"
+    },
+    {
       name: "Dr. Srinivas Ramasamy",
       role: "CTO",
       image: "/team/Srinivas Ramasamy_CTO.jpeg",
       bio: "Technical lead driving the development of electromagnetic bioreactor coils, quality control validation frameworks, and downstream NTA profiling.",
-      linkedin: "https://www.linkedin.com/company/cellivate-technologies/"
+      linkedin: "https://www.linkedin.com/in/srinivas639"
     },
     {
       name: "Arjita Nanda",
       role: "Regulatory Affairs",
       image: "/team/Arjita Nanda_Regulatory Affairs.JPG",
       bio: "Managing clinical QMS alignments, pilot evaluation contracts, and commercial scaling partnerships across pharmaceutical and skincare sectors.",
-      linkedin: "https://www.linkedin.com/company/cellivate-technologies/"
+      linkedin: "https://www.linkedin.com/in/arjitananda"
     },
     {
       name: "Aravinthan Kumaran",
       role: "Project Engineer",
       image: "/team/Aravinthan Kumaran_Project Engineer.jpeg",
       bio: "Focusing on bioreactor design, system integration, mechanical development, and pilot scale process optimization.",
-      linkedin: "https://www.linkedin.com/company/cellivate-technologies/"
+      linkedin: "https://www.linkedin.com/in/aravinthankumaran"
     },
     {
       name: "Emily Duran",
       role: "Admin & Operations",
       image: "/team/Emily Duran_Admin & Operations.jpeg",
       bio: "Overseeing day-to-day administrative workflows, financial operations, vendor relations, and logistical management.",
-      linkedin: "https://www.linkedin.com/company/cellivate-technologies/"
+      linkedin: "https://www.linkedin.com/in/emily-duran-a03b2251"
     },
     {
       name: "Jess Min Htet",
@@ -77,26 +84,127 @@ export default function About() {
     }
   ];
 
-  const achievements = [
+  const [activeTab, setActiveTab] = useState<"awards" | "media">("awards");
+
+  const awards = [
     {
-      title: "Stability",
-      status: "Achieved",
-      desc: "Product stability on par with Fetal Bovine Serum."
+      title: "ASPIRE Incubation Prize",
+      desc: "Awarded by ASPIRE Incubation Labs, recognizing breakthrough deep-tech innovations with high commercial potential.",
+      logo: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611369630-B7UM5KLYHCBVP3DF7LG5/ASPIRE.png"
     },
     {
-      title: "Pilot Network",
-      status: "Active & Expanding",
-      desc: "Secured high validation traction across research institutes and industry partners."
+      title: "Mitsubishi Chemical Group Partnership",
+      desc: "Recognized by the Mitsubishi Chemical Group for pioneering sustainable biological inputs and cell culture advancements.",
+      logo: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611369620-Y0GGPXB1DT0YMU6TO3G3/mc_group_logo.jpeg"
     },
     {
-      title: "Non-Dilutive R&D Grants",
-      status: "Completed",
-      desc: "Successfully funded primary R&D pipeline through competitive government grants."
+      title: "TECH PLANTER Award Winner",
+      desc: "TECH PLANTER Award Winner, accelerating cell culture technologies and international biotechnology research networks.",
+      logo: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611369614-RE2V2LQHF3GU38K81MRT/leave_a_nest_logo.png"
     },
     {
-      title: "Commercial Orders",
-      status: "3 Large Orders Secured",
-      desc: "Received orders exceeding >US$1M and onboarded a key regional distributor."
+      title: "Asia Agri-Food Innovation Summit",
+      desc: "Selected as a key innovator at the Asia-Pacific Agri-Food Innovation Summit for sustainable protein disruption.",
+      logo: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611369626-PP673L293KNF45PWHKGC/AFIC-no-background-1024x264.png"
+    },
+    {
+      title: "Supported by Enterprise Singapore",
+      desc: "Backed by Enterprise Singapore through non-dilutive R&D grants and commercial development support.",
+      logo: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611369634-NLL01R1ETFPGTH1M3DD7/Enterprise+Singapore.png"
+    }
+  ];
+
+  const recognitions = [
+    {
+      title: "Cellular Engineering Skin to make Leather: A New Sustainability Goal?",
+      link: "https://technode.global/2023/05/18/cellular-engineering-skin-to-make-leather-a-new-sustainability-goal/",
+      date: "May 18, 2023",
+      excerpt: "Published by TechNode Global",
+      image: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685613204029-XKL5JJVJ0WTA6G7CI2LF/2023_Technode.jpg"
+    },
+    {
+      title: "ProjectEx Announces $1M USD Seed Funding Goal for Its Cultivated Exotic Leather",
+      link: "https://www.greenqueen.com.hk/projectex-seed-funding-goal-cultivated-exotic-leather/",
+      date: "May 8, 2023",
+      excerpt: "Published by Green Queen Media",
+      image: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611398458-QIB7EV3UV8HHWITC90NQ/green-queen-crocodile-birkin-green-queen.jpg"
+    },
+    {
+      title: "Daily Cuts | Lab-grown leather - is this the future for the fashion industry?",
+      link: "https://open.spotify.com/episode/6h9X54DWy2x0NoUUxSRgMo?si=xJ_t_ypXQ3SPrpMA_RRBTQ",
+      date: "April 27, 2023",
+      excerpt: "Published by CNA",
+      image: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611398462-CSSDB4TJ6OPRLITB0PJV/daily_cuts.png"
+    },
+    {
+      title: "Mind Your Business: From Cells to Style - How lab-grown exotic leather is revolutionising the designer bag industry",
+      link: "https://open.spotify.com/episode/5cqwRtYo2CGHNrYiQ9mUkx",
+      date: "April 11, 2023",
+      excerpt: "Published by MoneyFm 89.3",
+      image: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611398454-BRH0PU3YY2TP30D85E56/MoneyFM-Cellivate.jpeg"
+    },
+    {
+      title: "Vogue Singapore Innovation Prize winning duo behind ProjectEx",
+      link: "https://vogue.sg/projectex-vogue-singapore-innovation-prize/",
+      date: "March 10, 2023",
+      excerpt: "Published by Vogue Singapore",
+      image: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611398444-VBNNAD7HQWV5C3FC8P9T/Cellivate-Vogue-SG.png"
+    },
+    {
+      title: "Sustainable Meat Solutions: Investing, Innovating, and Solving Food Challenges in 2023",
+      link: "https://www.youtube.com/watch?v=0WEvaEq_ckk",
+      date: "March 4, 2023",
+      excerpt: "Published by Clear Meat",
+      image: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611398449-ALY4P03TUH5XQQXO86CI/Clear+Meat.jpg"
+    },
+    {
+      title: "Cellular engineering could be the future of leather production",
+      link: "https://www.scmp.com",
+      date: "March 4, 2023",
+      excerpt: "Published by South China Morning Post",
+      image: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611398429-7WXI9C4Z3HVBYOK0HQ0O/SCMP.JPG"
+    },
+    {
+      title: "The Big Read in short: Doing good and making money while at it",
+      link: "https://www.todayonline.com/big-read/big-read-short-doing-good-and-making-money-while-it-2037451",
+      date: "November 5, 2022",
+      excerpt: "Published by TODAY",
+      image: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611398370-QOOM4LTIZ8UOF9Y0466Z/20221102_ili_cellivate_technologies-6.jpg"
+    },
+    {
+      title: "Alt Protein Podcast: Compounding Cultivation",
+      link: "https://podcasts.apple.com/us/podcast/compounding-cultivation-cellivate-technologies/id1434996393?i=1000556131840",
+      date: "April 4, 2022",
+      excerpt: "Published by Alt Protein Podcast",
+      image: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611398440-NUO4FG75BDCPOF1NN7D7/VeganStartupPodcast.JPG"
+    },
+    {
+      title: "ASPIRE with Prof. Neo",
+      link: "https://cellivate.co",
+      date: "December 28, 2021",
+      excerpt: "Published by ASPIRE Incubation Labs",
+      image: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611398413-X74N5UOFZXZ50PZDI69V/Screenshot+2023-01-04+at+12.18.58+PM.png"
+    },
+    {
+      title: "Sustainable Singapore: How cell culture technology is enabling the clean meat revolution",
+      link: "https://www.moneyfm893.sg/guest/viknish-krishnan-kutty-cellivate-technologies/",
+      date: "June 30, 2021",
+      excerpt: "Published by MoneyFM 89.3",
+      image: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611398389-4PIL9YC1X0AGPHRWOY5A/3006_MDT_815-960x540.jpg"
+    },
+    {
+      title: "Asia-Pacific Agri-Food Innovation Summit",
+      link: "https://cellivate.co",
+      date: "November 20, 2020",
+      excerpt: "Asia-Pacific Agri-Food Innovation Summit Speaker",
+      image: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611398399-TJUNCB0E2UYHXU006RG4/2020_Asia-Pacific+Agri-Food+Innovation+Summit.png"
+    },
+    {
+      title: "Cellivate Technologies: One of Asia’s Top 100 Protein Disruptors",
+      link: "https://cellivate.co",
+      date: "August 1, 2020",
+      excerpt: "Named one of Asia's Top 100 Protein Disruptors",
+      image: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611398377-YC9GQ11YO8UCU4U2BCBO/2020_Asia%27s+Top+100+Protein+Disruptors.jpg"
     }
   ];
 
@@ -233,17 +341,156 @@ export default function About() {
         <div className="section-container">
           <div className="about-section-header" style={{ textAlign: "center", marginBottom: "60px" }}>
             <span className="about-eyebrow" style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px" }}>Traction & Recognition</span>
-            <h2 className="about-section-title" style={{ color: "#ffffff", fontSize: "2.6rem", fontWeight: 800, marginTop: "10px" }}>Key Milestones & Achievements</h2>
+            <h2 className="about-section-title" style={{ color: "#ffffff", fontSize: "2.6rem", fontWeight: 800, marginTop: "10px" }}>Awards & Media Coverage</h2>
           </div>
-          <div className="about-milestones-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "30px" }}>
-            {achievements.map((ach, idx) => (
-              <div key={idx} className="about-milestone-card" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", padding: "40px 30px", borderRadius: "20px", display: "flex", flexDirection: "column", gap: "16px", backdropFilter: "blur(12px)", transition: "all 0.3s ease" }}>
-                <span className="about-milestone-status" style={{ color: "var(--accent-red)", fontSize: "0.85rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px" }}>{ach.status}</span>
-                <h3 className="about-milestone-title" style={{ fontSize: "1.4rem", fontWeight: 700, color: "#ffffff", margin: 0 }}>{ach.title}</h3>
-                <p className="about-milestone-desc" style={{ color: "#cbd5e1", fontSize: "0.95rem", lineHeight: "1.5", margin: 0 }}>{ach.desc}</p>
-              </div>
-            ))}
+
+          {/* Tab Selection */}
+          <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginBottom: "50px", flexWrap: "wrap" }}>
+            <button
+              onClick={() => setActiveTab("awards")}
+              style={{
+                background: activeTab === "awards" ? "var(--accent-red)" : "rgba(255,255,255,0.05)",
+                color: "#ffffff",
+                border: "none",
+                padding: "12px 28px",
+                borderRadius: "30px",
+                fontSize: "1rem",
+                fontWeight: 700,
+                cursor: "pointer",
+                transition: "all 0.3s ease",
+                boxShadow: activeTab === "awards" ? "0 8px 20px rgba(217, 35, 52, 0.25)" : "none"
+              }}
+            >
+              🏆 Awards & Support
+            </button>
+            <button
+              onClick={() => setActiveTab("media")}
+              style={{
+                background: activeTab === "media" ? "var(--accent-red)" : "rgba(255,255,255,0.05)",
+                color: "#ffffff",
+                border: "none",
+                padding: "12px 28px",
+                borderRadius: "30px",
+                fontSize: "1rem",
+                fontWeight: 700,
+                cursor: "pointer",
+                transition: "all 0.3s ease",
+                boxShadow: activeTab === "media" ? "0 8px 20px rgba(217, 35, 52, 0.25)" : "none"
+              }}
+            >
+              📰 Media & Articles
+            </button>
           </div>
+
+          {activeTab === "awards" ? (
+            /* Awards Grid */
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "30px" }}>
+              {awards.map((award, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    background: "rgba(255,255,255,0.03)",
+                    border: "1px solid rgba(255,255,255,0.06)",
+                    padding: "30px",
+                    borderRadius: "20px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "20px",
+                    backdropFilter: "blur(12px)"
+                  }}
+                >
+                  <div
+                    style={{
+                      height: "60px",
+                      background: "#ffffff",
+                      borderRadius: "12px",
+                      padding: "10px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center"
+                    }}
+                  >
+                    <img
+                      src={award.logo}
+                      alt={award.title}
+                      style={{ maxHeight: "100%", maxWidth: "100%", objectFit: "contain" }}
+                    />
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                    <h3 style={{ fontSize: "1.2rem", fontWeight: 700, color: "#ffffff", margin: 0 }}>
+                      {award.title}
+                    </h3>
+                    <p style={{ color: "#cbd5e1", fontSize: "0.9rem", lineHeight: "1.5", margin: 0 }}>
+                      {award.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            /* Media Grid */
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "30px" }}>
+              {recognitions.map((rec, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    background: "rgba(255,255,255,0.03)",
+                    border: "1px solid rgba(255,255,255,0.06)",
+                    borderRadius: "20px",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                    backdropFilter: "blur(12px)",
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease"
+                  }}
+                >
+                  <div style={{ height: "180px", overflow: "hidden", position: "relative" }}>
+                    <img
+                      src={rec.image}
+                      alt={rec.title}
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "12px",
+                        left: "12px",
+                        background: "var(--accent-red)",
+                        color: "#ffffff",
+                        fontSize: "0.75rem",
+                        fontWeight: 700,
+                        padding: "4px 10px",
+                        borderRadius: "20px"
+                      }}
+                    >
+                      {rec.date}
+                    </div>
+                  </div>
+                  <div style={{ padding: "24px", display: "flex", flexDirection: "column", gap: "10px", flexGrow: 1 }}>
+                    <span style={{ fontSize: "0.8rem", color: "#94a3b8", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                      {rec.excerpt}
+                    </span>
+                    <a
+                      href={rec.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        fontSize: "1.05rem",
+                        fontWeight: 700,
+                        color: "#ffffff",
+                        textDecoration: "none",
+                        lineHeight: "1.4",
+                        margin: 0,
+                        transition: "color 0.2s"
+                      }}
+                    >
+                      {rec.title}
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

@@ -56,7 +56,7 @@ export default function Contact() {
               <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
                 <span style={{ fontSize: "1.5rem", marginTop: "2px" }}>📍</span>
                 <div>
-                  <h4 style={{ fontWeight: 700, color: "var(--brand-primary)", margin: "0 0 4px 0" }}>Singapore Headquarters</h4>
+                  <h4 style={{ fontWeight: 700, color: "var(--brand-primary)", margin: "0 0 4px 0" }}>Singapore Office</h4>
                   <p style={{ color: "var(--brand-light)", fontSize: "0.9rem", margin: 0, lineHeight: "1.4" }}>
                     160 Robinson Rd, #14-04,<br />Singapore 068914
                   </p>
@@ -66,7 +66,7 @@ export default function Contact() {
               <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
                 <span style={{ fontSize: "1.5rem", marginTop: "2px" }}>🇦🇺</span>
                 <div>
-                  <h4 style={{ fontWeight: 700, color: "var(--brand-primary)", margin: "0 0 4px 0" }}>Australia Subsidiary</h4>
+                  <h4 style={{ fontWeight: 700, color: "var(--brand-primary)", margin: "0 0 4px 0" }}>Australia Office</h4>
                   <p style={{ color: "var(--brand-light)", fontSize: "0.9rem", margin: 0, lineHeight: "1.4" }}>
                     2302 118 Kavanagh St.<br />Southbank VIC 3006
                   </p>
@@ -76,7 +76,7 @@ export default function Contact() {
               <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
                 <span style={{ fontSize: "1.5rem", marginTop: "2px" }}>🇮🇳</span>
                 <div>
-                  <h4 style={{ fontWeight: 700, color: "var(--brand-primary)", margin: "0 0 4px 0" }}>Cellivate India</h4>
+                  <h4 style={{ fontWeight: 700, color: "var(--brand-primary)", margin: "0 0 4px 0" }}>India Office</h4>
                   <p style={{ color: "var(--brand-light)", fontSize: "0.9rem", margin: 0, fontStyle: "italic" }}>
                     Coming Soon
                   </p>

@@ -140,19 +140,19 @@ export default function RootLayout({
                     <span style={{ display: "block", fontSize: "0.85rem", color: "#94a3b8", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "6px" }}>Our Offices</span>
                     <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                       <div>
-                        <span style={{ fontSize: "0.75rem", color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px", display: "block", marginBottom: "2px" }}>Singapore (HQ)</span>
+                        <span style={{ fontSize: "0.75rem", color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px", display: "block", marginBottom: "2px" }}>Singapore Office</span>
                         <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "var(--brand-primary)", margin: 0, lineHeight: "1.3" }}>
                           160 Robinson Rd, #14-04,<br />Singapore 068914
                         </p>
                       </div>
                       <div>
-                        <span style={{ fontSize: "0.75rem", color: "#3b2e9a", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px", display: "block", marginBottom: "2px" }}>Australia Subsidiary</span>
+                        <span style={{ fontSize: "0.75rem", color: "#3b2e9a", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px", display: "block", marginBottom: "2px" }}>Australia Office</span>
                         <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "var(--brand-primary)", margin: 0, lineHeight: "1.3" }}>
                           2302 118 Kavanagh St.<br />Southbank VIC 3006
                         </p>
                       </div>
                       <div>
-                        <span style={{ fontSize: "0.75rem", color: "#10b981", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px", display: "block", marginBottom: "2px" }}>India</span>
+                        <span style={{ fontSize: "0.75rem", color: "#10b981", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px", display: "block", marginBottom: "2px" }}>India Office</span>
                         <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "var(--brand-primary)", margin: 0, lineHeight: "1.3", fontStyle: "italic" }}>
                           Coming Soon
                         </p>
