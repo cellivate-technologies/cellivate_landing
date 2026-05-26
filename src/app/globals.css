@@ -3921,12 +3921,28 @@ body {
         gap: 24px;
     }
 
-    .vm-card {
-        min-height: 300px;
+    .flashcard-container,
+    .flashcard-inner {
+        min-height: 360px;
     }
 
+    .flashcard-front-content,
     .vm-content {
-        padding: 36px 24px 44px 24px;
+        padding: 28px 20px 32px 20px;
+    }
+
+    .flashcard-front-title {
+        font-size: 1.45rem;
+    }
+
+    .vm-statement {
+        font-size: 1.05rem;
+        line-height: 1.45;
+    }
+
+    .flashcard-icon {
+        width: 68px;
+        height: 68px;
     }
 }
 
