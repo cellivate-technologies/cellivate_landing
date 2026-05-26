@@ -3657,38 +3657,69 @@ body {
     gap: 32px;
 }
 
-.vm-card {
-    position: relative;
+/* Flashcard Container styling with 3D perspective */
+.flashcard-container {
+    perspective: 1200px;
     min-height: 420px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+}
+
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.flashcard-container.is-flipped .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back Faces */
+.flashcard-front,
+.flashcard-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.vm-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(255, 255, 255, 0.16);
+.flashcard-front:hover,
+.flashcard-back:hover {
+    border-color: rgba(255, 255, 255, 0.18);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
 }
 
-/* Vision — deep navy to indigo */
-.vm-card-vision {
+.flashcard-back {
+    transform: rotateY(180deg);
+}
+
+/* Card Gradient Themes */
+.card-vision-front,
+.card-vision-back {
     background: linear-gradient(135deg, #05082e 0%, #0d1554 50%, #1a1060 100%);
 }
 
-/* Mission — slightly shifted indigo to teal-navy */
-.vm-card-mission {
+.card-mission-front,
+.card-mission-back {
     background: linear-gradient(135deg, #080e38 0%, #0b1a4a 50%, #0a2240 100%);
 }
 
 /* Dot-grid decoration */
-.vm-card::before {
+.flashcard-front::before,
+.flashcard-back::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -3699,7 +3730,8 @@ body {
 }
 
 /* Glow orb bottom-right */
-.vm-card::after {
+.card-vision-front::after,
+.card-vision-back::after {
     content: '';
     position: absolute;
     width: 320px;
@@ -3712,22 +3744,37 @@ body {
     z-index: 0;
 }
 
-.vm-card-mission::after {
+.card-mission-front::after,
+.card-mission-back::after {
+    content: '';
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    bottom: -100px;
+    right: -80px;
     background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
 }
 
+/* Content structures */
 .vm-content {
     position: relative;
     z-index: 2;
     padding: 48px;
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .vm-logo-row {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 
 .vm-logo-text {
@@ -3757,6 +3804,94 @@ body {
     line-height: 1.38;
     margin: 0;
     letter-spacing: -0.02em;
+}
+
+/* Flashcard helper elements */
+.flashcard-front-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    padding: 48px;
+    position: relative;
+    z-index: 2;
+}
+
+.flashcard-title-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.flashcard-front-title {
+    font-family: var(--font-display), sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: #ffffff;
+    margin: 8px 0 0 0;
+    letter-spacing: -0.02em;
+}
+
+.flashcard-icon-container {
+    margin: 20px 0;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flashcard-icon {
+    width: 84px;
+    height: 84px;
+    color: rgba(255, 255, 255, 0.85);
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.15));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.flashcard-container:hover .flashcard-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.3));
+}
+
+.flashcard-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.flashcard-container:hover .flashcard-badge {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.flashcard-flip-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: auto;
+    transition: color 0.2s ease;
+}
+
+.flashcard-container:hover .flashcard-flip-back {
+    color: rgba(255, 255, 255, 0.85);
 }
 
 /* Scroll Popup Animation */

@@ -45,7 +45,8 @@ export default function About() {
       role: "Regulatory Affairs",
       image: "/team/Arjita Nanda_Regulatory Affairs.JPG",
       bio: "Managing clinical QMS alignments, pilot evaluation contracts, and commercial scaling partnerships across pharmaceutical and skincare sectors.",
-      linkedin: "https://www.linkedin.com/in/arjitananda"
+      linkedin: "https://www.linkedin.com/in/arjitananda",
+      objectPosition: "center 20%"
     },
     {
       name: "Aravinthan Kumaran",
@@ -85,6 +86,8 @@ export default function About() {
   ];
 
   const [activeTab, setActiveTab] = useState<"awards" | "media">("awards");
+  const [visionFlipped, setVisionFlipped] = useState(false);
+  const [missionFlipped, setMissionFlipped] = useState(false);
 
   const awards = [
     {
@@ -248,38 +251,122 @@ export default function About() {
         <div className="section-container">
           <div className="vision-mission-grid">
 
-            <div className={`vm-card vm-card-vision ${isVisible ? "animate-popup" : "vm-card-hidden"}`}>
-              <div className="vm-content">
-                <div className="vm-logo-row">
-                  {logoSvg}
-                  <span className="vm-logo-text">
-                    Cellivate
-                    <span className="vm-logo-sub">Technologies</span>
-                  </span>
+            {/* Vision Card */}
+            <div 
+              className={`flashcard-container ${visionFlipped ? "is-flipped" : ""} ${isVisible ? "animate-popup" : "vm-card-hidden"}`}
+              onClick={() => setVisionFlipped(!visionFlipped)}
+            >
+              <div className="flashcard-inner">
+                {/* Front Face */}
+                <div className="flashcard-front card-vision-front">
+                  <div className="flashcard-front-content">
+                    <div className="vm-logo-row">
+                      {logoSvg}
+                      <span className="vm-logo-text">
+                        Cellivate
+                        <span className="vm-logo-sub">Technologies</span>
+                      </span>
+                    </div>
+                    
+                    <div className="flashcard-title-row">
+                      <span className="vm-label" style={{ margin: 0 }}>Our Vision</span>
+                      <h3 className="flashcard-front-title">What We See</h3>
+                    </div>
+
+                    <div className="flashcard-icon-container">
+                      <svg className="flashcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    </div>
+
+                    <span className="flashcard-badge">
+                      Click to Reveal ➔
+                    </span>
+                  </div>
                 </div>
-                <p className="vm-label">Vision:</p>
-                <p className="vm-statement">
-                  To lead the global transition to sustainable practices with cell-based technologies, eliminating the need for animal use and creating a healthier future for humanity and the planet
-                </p>
+
+                {/* Back Face */}
+                <div className="flashcard-back card-vision-back">
+                  <div className="vm-content">
+                    <div className="vm-logo-row">
+                      {logoSvg}
+                      <span className="vm-logo-text">
+                        Cellivate
+                        <span className="vm-logo-sub">Technologies</span>
+                      </span>
+                    </div>
+                    <p className="vm-label">Vision:</p>
+                    <p className="vm-statement">
+                      To lead the global transition to sustainable practices with cell-based technologies, eliminating the need for animal use and creating a healthier future for humanity and the planet
+                    </p>
+                    <span className="flashcard-flip-back">
+                      Click to Flip Back ↺
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
+            {/* Mission Card */}
             <div 
-              className={`vm-card vm-card-mission ${isVisible ? "animate-popup" : "vm-card-hidden"}`}
+              className={`flashcard-container ${missionFlipped ? "is-flipped" : ""} ${isVisible ? "animate-popup" : "vm-card-hidden"}`}
               style={{ animationDelay: "0.15s" }}
+              onClick={() => setMissionFlipped(!missionFlipped)}
             >
-              <div className="vm-content">
-                <div className="vm-logo-row">
-                  {logoSvg}
-                  <span className="vm-logo-text">
-                    Cellivate
-                    <span className="vm-logo-sub">Technologies</span>
-                  </span>
+              <div className="flashcard-inner">
+                {/* Front Face */}
+                <div className="flashcard-front card-mission-front">
+                  <div className="flashcard-front-content">
+                    <div className="vm-logo-row">
+                      {logoSvg}
+                      <span className="vm-logo-text">
+                        Cellivate
+                        <span className="vm-logo-sub">Technologies</span>
+                      </span>
+                    </div>
+
+                    <div className="flashcard-title-row">
+                      <span className="vm-label" style={{ margin: 0 }}>Our Mission</span>
+                      <h3 className="flashcard-front-title">What We Do</h3>
+                    </div>
+
+                    <div className="flashcard-icon-container">
+                      <svg className="flashcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M12 2v4" />
+                        <path d="M12 18v4" />
+                        <path d="M2 12h4" />
+                        <path d="M18 12h4" />
+                      </svg>
+                    </div>
+
+                    <span className="flashcard-badge">
+                      Click to Reveal ➔
+                    </span>
+                  </div>
                 </div>
-                <p className="vm-label">Mission:</p>
-                <p className="vm-statement">
-                  Implementing deep-tech products and technologies that enable the use of cells to replace animal derived products
-                </p>
+
+                {/* Back Face */}
+                <div className="flashcard-back card-mission-back">
+                  <div className="vm-content">
+                    <div className="vm-logo-row">
+                      {logoSvg}
+                      <span className="vm-logo-text">
+                        Cellivate
+                        <span className="vm-logo-sub">Technologies</span>
+                      </span>
+                    </div>
+                    <p className="vm-label">Mission:</p>
+                    <p className="vm-statement">
+                      Implementing deep-tech products and technologies that enable the use of cells to replace animal derived products
+                    </p>
+                    <span className="flashcard-flip-back">
+                      Click to Flip Back ↺
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -287,7 +374,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── Team Group Photo ── */}
+      {/* ── Team Group Photo ──
       <section className="about-section">
         <div className="section-container">
           <div className="about-team-photo-wrap">
@@ -305,6 +392,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      ── */}
 
       {/* ── Core Team ── */}
       <section className="about-section" style={{ background: "#fcfcfa" }}>
@@ -317,7 +405,16 @@ export default function About() {
             {team.map((member, idx) => (
               <div key={idx} className="about-person-card">
                 <div className="about-avatar">
-                  <img src={member.image} alt={member.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    style={{ 
+                      width: "100%", 
+                      height: "100%", 
+                      objectFit: "cover",
+                      objectPosition: (member as any).objectPosition || "center"
+                    }} 
+                  />
                 </div>
                 <h3 className="about-person-name">{member.name}</h3>
                 <span className="about-person-role">{member.role}</span>
