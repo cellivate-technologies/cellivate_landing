@@ -18,37 +18,41 @@ export default function Tech() {
   const steps = [
     {
       title: "Get Cells",
-      shortDesc: "from numerous sources like cell banks, off the shelf, etc",
+      shortDesc: "From numerous sources like cell banks, off-the-shelf vials, etc.",
       desc: "We source high-quality donor cells from established cell banks, off-the-shelf vials, or other qualified repositories.",
       detail: "Sourcing healthy, standardized donor cells from cell banks or off-the-shelf configurations ensures a robust and compliant biological starting material for Booster production.",
       image: "/extracted_images/cell_banking_vials.png",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path>
+          <path d="M4.5 3h15" />
+          <path d="M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3" />
+          <path d="M6 14h12" />
         </svg>
       )
     },
     {
       title: "Magnetic Stimulation",
-      shortDesc: "Proprietary electromagnetic stimulation to prime EV release",
+      shortDesc: "Proprietary electromagnetic stimulation to prime EV release.",
       desc: "Priming cells within our customized electromagnetic field technology chamber to boost signaling factor secretion.",
       detail: "Our proprietary electromagnetic field technology primes cells to trigger specific physiological responses. This cellular activation drives controlled mitochondrial responses, stimulating cells to package growth factors and signaling cues into extracellular vesicles.",
       image: "/extracted_images/magnetic_stimulation_chamber.png",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+          <path d="M5 10a7 7 0 0 1 14 0v4a3 3 0 0 1-6 0v-4a1 1 0 0 0-2 0v4a3 3 0 0 1-6 0Z" />
+          <path d="M5 14H3v2h2Z" />
+          <path d="M19 14h2v2h-2Z" />
         </svg>
       )
     },
     {
-      title: "Clarify, Characterize, and Formulate",
-      shortDesc: "Filter, analyze, and stabilize the final formulation",
+      title: "Characterize and Formulate",
+      shortDesc: "Filter, analyze, and stabilize the final formulation.",
       desc: "Filter the conditioned media and characterize particle-rich output using orthogonal analytics, including NTA.",
       detail: "We introduce proprietary stabilizer additives to guarantee output stability, batch-to-batch consistency, and complete reproducibility. This ensures that the final formulation is highly optimized for primary cell-based workflows and downstream biomanufacturing.",
       image: "/extracted_images/booster_formulation.png",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+          <path d="M6 18h8M3 22h18M14 22A7 7 0 0 0 7 15v-4M9 14h2M12 9l-2-2M15 12l-5-5L14 3l5 5z" />
         </svg>
       )
     }

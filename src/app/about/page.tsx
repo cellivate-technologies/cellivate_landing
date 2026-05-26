@@ -70,11 +70,11 @@ export default function About() {
       linkedin: "https://www.linkedin.com/company/cellivate-technologies/"
     },
     {
-      name: "Thanthullu Sridharan",
+      name: "Thanthullu Sridharan Janavi",
       role: "Graduate Biomedical Research Intern",
       image: "/team/Thanthulu Sridharan Janavi_Graduate Biomedical Research Intern.png",
       bio: "Conducting laboratory assay profiling, cell characterization studies, and performance validations of formulation runs.",
-      linkedin: "https://www.linkedin.com/company/cellivate-technologies/"
+      linkedin: "https://www.linkedin.com/in/janavi-t-s-895a372b1?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
     },
     {
       name: "Vincent Duru",
