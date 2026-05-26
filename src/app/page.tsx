@@ -12,16 +12,6 @@ export default function Home() {
     cy: number;
   } | null>(null);
 
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.muted = true;
-      videoRef.current.play().catch(err => {
-        console.warn("Autoplay failed:", err);
-      });
-    }
-  }, []);
 
   return (
     <main style={{ minHeight: "100vh" }}>
@@ -89,19 +79,12 @@ export default function Home() {
           <div className="hero-visual-area">
             <div className="video-perspective-wrapper">
               <div className="video-container-glass">
-                <video 
-                  ref={videoRef}
+                <img 
                   className="cellivate-loop-video" 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline 
-                  aria-hidden="true" 
+                  src="/boomerang_still.jpg" 
+                  alt="Cellivate Booster cell culture concept"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                >
-                  <source src="/boomerang_loop.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                />
                 <div className="video-overlay-shield"></div>
               </div>
             </div>
